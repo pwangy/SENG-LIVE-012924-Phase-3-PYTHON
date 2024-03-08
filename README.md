@@ -1,4 +1,4 @@
-# SENG-LIVE-000000 Phase 3 - Python
+# SENG-LIVE-WEST-061223 Phase 3 - Python
 
 ## Phase Level Objectives
 
@@ -10,16 +10,17 @@
 - Create and present a project with a React frontend and a database-backed API backend
 
 
-| Lecture | Notes | Videos | Starter | Solution |
-| ------- | :---: | ------ | ------- | -------- |
-| 1. (00/00/00) Python Fundamentals     |  [Notes](#)     |  [Video](#)      |    [Starter](#)     |   [Solution](#)       |
-| 2. (00/00/00) Python Data Structures     |  [Notes](#)     |   [Video](#)     |    [Starter](#)     |    [Solution](#)        |
-| 3. (00/00/00) Object Oriented Programming in Python     |  [Notes](#)     |  [Video](#)      |   [Starter](#)      |    [Solution](#)      |
-| 4. (00/00/00) OOP 2: Class Methods & Class Variables     |   [Notes](#)    |   [Video](#)     |   [Starter](#)      |  [Solution](#)        |
-| 5. (00/00/00) SQL Fundamentals & Table Relations     |  [Notes](#)     |   [Video](#)     |   [Starter](#)      |   [Solution](#)         |
-| 6. (00/00/00) Object-Relational Mapping     |   [Notes](#)    |   [Video](#)     |    [Starter](#)     |   [Solution](#)       |
-| 7. (00/00/00) SQLAlchemy & Alembic     |   [Notes](#)    |    [Video](#)    |   [Starter](#)      |    [Solution](#)      |
-| 8. (00/00/00) SQLAlchemy Associations     |   [Notes](#)    |    [Video](#)    |   [Starter](#)      |    [Solution](#)      |
+| Lecture                                                                     |   Notes    | Videos     | Starter      | Solution      |
+| --------------------------------------------------------------------------- | :--------: | ---------- | ------------ | ------------- |
+| 1. (10/23/23) Python Fundamentals                                           | [Notes]() | [Video]() |
+| 2. (10/24/23) Python Data Structures                                        | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+| 3. (10/25/23) Object Oriented Programming in Python                         | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+| 4. (10/26/23) OOP 2: Class Methods, Class Variables | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+| 5. (10/27/23) Object Relationships     | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+| 6. (10/30/23) SQL Fundamentals & Table Relations                            | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+| 7. (11/1/23) Object-Relational Mapping                                     | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+| 8. (11/03/23) Your First CLI                                          | [Notes]() | [Video]() | [Starter]() | [Solution]() |
+
 
 ## 1: Python Fundamentals
 ### Lecture Goals:
@@ -145,7 +146,7 @@
 - Stretch Topics
     - Object Properties
 
-## 4: OOP 2: Class Methods & Class Variables
+## 4: OOP 2: Class Methods, Class Variables, & Object Relationships
 ### Lecture Goals:
 - Demonstrate Decorators 
     - `@decorator`  
@@ -159,6 +160,18 @@
 - Object Inheritance
 - Stretch Goals
     - Super
+
+- Build one-to-many relationships between objects
+    - Define one-to-many relationships
+    - Discuss their importance and use
+    - Emphasize single-source-of-truth
+    - Demonstrate building one-way and two-way relationships
+- Build many-to-many relationships between objects
+    - Define many-to-many relationships
+    - Discuss their importance and use
+    - Demonstrate building the relationship with and without intermediary class
+- Aggregate Methods
+    - Write aggregate methods to collect data about objects using their related objects
 
 ### Lecture Topics:
 - Decorators
