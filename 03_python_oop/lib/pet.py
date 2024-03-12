@@ -1,60 +1,99 @@
 # !/usr/bin/env python3
-    # Defines the location of the Python interpreter
-    # See More => https://stackoverflow.com/a/7670338/8655247
+# Defines the location of the Python interpreter
+# See More => https://stackoverflow.com/a/7670338/8655247
 
 import ipdb
 
 # Classes
 
 # 1. ✅ Create a Pet class
+class Pet():
+    """this class represents the idea of a pet"""
 
+    def __init__(self, name, species, age=0):
+        self.name = name
+        self.species = species
+        self.age = age
+
+    def get_name(self):
+        return self._name
+
+    def set_name(self, new_name):
+        if len(new_name) > 6 and isinstance(new_name, str):
+            self._name = new_name
+        else:
+            raise AttributeError("Names must be at least 6 chars")
+
+    name = property(get_name,set_name)
+
+    def print_pet_details(self):
+        return f"""
+            Pet Name: {self.name}
+            Pet Species: {self.species}
+            Pet Age: {self.age}
+        """
+
+    def __repr__(self):
+        return f"""
+            Pet Name: {self.name}
+            Pet Species: {self.species}
+            Pet Age: {self.age}
+        """
+    def __str__(self):
+        return f"""
+            Pet Name: {self.name}
+            Pet Species: {self.species}
+            Pet Age: {self.age}
+        """
     # Note: Add 'pass' to the Pet class
 
+fido = Pet(age=7, species="dog", name="fidooooooo")
+print(fido)
 # 2. ✅ Instantiate a few Pet instances
 
-    # Compare the Pet instances. Are each of them the same object?
+# Compare the Pet instances. Are each of them the same object?
 
-# 3. ✅ Demonstrate __init__ 
+# 3. ✅ Demonstrate __init__
 
-    # Add arguments to instances  
+# Add arguments to instances
 
-    # Attributes:
-        # name
-        # age
-        # breed
-        # temperament
-        # owner
-    
-    # Use dot notation to access each Pet instance's attributes 
+# Attributes:
+# name
+# age
+# breed
+# temperament
+# owner
 
-    # Update attributes with new values
+# Use dot notation to access each Pet instance's attributes
+
+# Update attributes with new values
 
 # Instance Methods
 
-# 4. ✅ Create a "print_pet_details" function that will print each Pet instance's 
+# 4. ✅ Create a "print_pet_details" function that will print each Pet instance's
 # attributes
 
-    # Review the "self" keyword 
-    
-    # Invoke "print_pet_details" on an instance 
-    
-    # Example Terminal Ouput:
-        # name: Rose
-        # age: 11
-        # breed: Domestic Longhair
-        # temperament: Sweet
+# Review the "self" keyword
+
+# Invoke "print_pet_details" on an instance
+
+# Example Terminal Ouput:
+# name: Rose
+# age: 11
+# breed: Domestic Longhair
+# temperament: Sweet
 
 # 5. ✅ Create an Owner class with two instance methods:
 
-    # get_name => Retrieve Owner's name
-    
-    # set_name => Set Owner's name
+# get_name => Retrieve Owner's name
 
-        # Ensure that Owner's name is a String
+# set_name => Set Owner's name
 
-        # If not, issue warning of "Name must be a string"
+# Ensure that Owner's name is a String
 
-    # Use property() to compile get_name / set_name and invoke them
-    # whenever we access an Owner instance's name
+# If not, issue warning of "Name must be a string"
 
-    # Object Properties => Attributes that are controlled by methods
+# Use property() to compile get_name / set_name and invoke them
+# whenever we access an Owner instance's name
+
+# Object Properties => Attributes that are controlled by methods

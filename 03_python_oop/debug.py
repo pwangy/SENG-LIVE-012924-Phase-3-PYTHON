@@ -2,4 +2,6 @@
 
 from lib.pet import *
 
-import ipdb; ipdb.set_trace()
+if __name__ == "__main__":
+    # if I run this file from the terminal
+    import ipdb; ipdb.set_trace()
