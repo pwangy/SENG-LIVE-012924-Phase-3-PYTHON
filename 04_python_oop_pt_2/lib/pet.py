@@ -6,21 +6,17 @@ from decorator_profiler import measure_performance
 
 class Pet:
     # ✅ Define a class attribute (total_pets) and set it to 0
-
     # __slots__= ('_name', '_age', '_temperament', '_breed', '_owner')
 
     # What happens with our instances when we add a class attribute?
 
-    def __init__(self, name, age, breed, temperament, owner):
+    def __init__(self, *args, **kwargs):
         # In the following lines, by simply typing 'self.name = '
         # python will check if on the instance there are any setter properties
         # why setters? because there is an = after the word 'name'
         # if not, it will set the attribute manually and call it 'name'
-        self.name = name
-        self.age = age 
-        self.breed = breed
-        self.temperament = temperament
-        self.owner = owner
+        for k, v in kwargs.items():
+            setattr(self, k, v)
 
     # Using Property to control the behavior of attributes
     def get_name(self):
@@ -107,6 +103,6 @@ class Pet:
             owner:{self.owner}
         ''')
 
-fido = Pet(name="Fido", age=2, breed="pug", temperament="docile", owner="Matteo")
+fido = Pet(8234567, name="Fido", age=2, breed="pug", temperament="docile", owner="Matteo", xyz="test")
 milo = Pet(name="Milo", age=2, breed="pug", temperament="docile", owner="Matteo")
 print('done')
