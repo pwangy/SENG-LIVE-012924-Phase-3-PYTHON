@@ -85,7 +85,7 @@ class Veterinarian(Helper):
 
     @classmethod
     def vet_with_most_pets(cls):
-        """retieve the entire veterinarian object with the most pets patients"""
+        """retrieve the entire veterinarian object with the most pets patients"""
         pass
 
     #! Instance Methods
