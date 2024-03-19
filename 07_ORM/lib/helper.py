@@ -1,5 +1,6 @@
 import re
-class Helper:
+from abc import ABC
+class Helper(ABC):
     
     @classmethod
     def pascal_to_camel_plural(cls):
@@ -18,3 +19,18 @@ class Helper:
                 camel_case_plural += 's'
         
         return camel_case_plural
+    
+    @classmethod
+    def drop_table(cls, CONN, CURSOR):
+        """drops the veterinarian table if it exists"""
+        try:
+            with CONN:
+                CURSOR.execute(
+                    f"""
+                        DROP TABLE IF EXISTS {cls.pascal_to_camel_plural()};
+                    """
+                )
+            # CONN.commit()
+        except Exception as e:
+            # CONN.rollback()
+            return e
