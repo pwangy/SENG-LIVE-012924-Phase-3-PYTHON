@@ -1,5 +1,6 @@
 from helper import Helper
 import sqlite3
+from sqlite3 import IntegrityError
 
 CONN = sqlite3.connect("resources.db")
 
@@ -51,22 +52,46 @@ class Veterinarian(Helper):
             raise AttributeError("locations must be strings with at least one character")
         self._location = value
 
-    #! Class Methods
 
+    #! Class Methods
+    
     @classmethod
     def create_table(cls):
-        """creates the veterinarian table if it doesn't exist"""
-        pass
+        try:
+            with CONN:
+                CURSOR.execute(f"""
+                    CREATE TABLE IF NOT EXISTS {cls.pascal_to_camel_plural()} (
+                        id INTEGER PRIMARY KEY,
+                        name TEXT,
+                        specialization TEXT,
+                        location TEXT
+                    );
+                """)
+        except IntegrityError as e:
+            return e
 
     @classmethod
     def drop_table(cls):
-        """drops the veterinarian table if it exists"""
-        pass
+        try:
+            with CONN:
+                CURSOR.execute(
+                    f"""
+                        DROP TABLE IF EXISTS {cls.pascal_to_camel_plural()};
+                    """
+                )
+        except Exception as e:
+            return e
+
 
     @classmethod
     def get_all(cls):
-        """returns a list containing all the objects of this class by looking into the db table"""
-        pass
+        try:
+            with CONN:
+                result = CURSOR.execute(f"SELECT * FROM {cls.pascal_to_camel_plural()}")
+                rows = result.fetchall()
+                return [cls.new_from_db(row) for row in rows]
+        except Exception as e:
+            return e
 
     @classmethod
     def create(cls, name, specialization, location):
@@ -108,3 +133,6 @@ class Veterinarian(Helper):
     def remove_pet(self, pet_id):
         """disassociates a vet with a pet given their id"""
         pass
+
+Veterinarian.create_table()
+Veterinarian.drop_table()
